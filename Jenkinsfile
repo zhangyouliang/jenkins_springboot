@@ -1,4 +1,4 @@
-pipeline {
+node("master") {
     agent { docker 'java:8' }
     stages {
         def MVN_BIN = "${MVN_HOME}/bin/mvn"
@@ -8,7 +8,6 @@ pipeline {
                 sh """
                     mvn clean && mvn test
                 """
-                return
             }
         }
         stage('build') {
@@ -17,7 +16,6 @@ pipeline {
                 sh """
                     ${MVN_BIN} package -Dmaven.test.skip=true
                 """
-                return
             }
         }
 
