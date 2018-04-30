@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# 注意修改 docker 仓库地址
 image_name=10.0.0.44:5000/jenkins_springboot
 
 
