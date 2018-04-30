@@ -1,6 +1,5 @@
 pipeline {
     //agent { docker 'java:8' }
-    agent none
     stages {
         stage('test'){
             agent any
