@@ -28,9 +28,8 @@ pipeline {
             }
             steps {
                 echo 'Deploying..'
-                //chmod a+x docker.sh && docker.sh
                 sh """
-                    ls
+                    chmod a+x ./docker.sh && ./docker.sh
                 """
             }
         }
