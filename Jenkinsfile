@@ -1,8 +1,8 @@
 pipeline {
     //agent { docker 'java:8' }
+    agent any
     stages {
         stage('test'){
-            agent any
             steps{
                 echo 'Testing..'
                 sh """
@@ -11,7 +11,6 @@ pipeline {
             }
         }
         stage('build') {
-            agent any
             steps {
                 echo 'Buding..'
                 sh """
@@ -21,7 +20,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent any
             when {
                 expression {
                     /*如果测试失败，状态为UNSTABLE*/
