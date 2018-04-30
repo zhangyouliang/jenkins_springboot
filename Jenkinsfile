@@ -3,7 +3,7 @@ pipeline {
     agent { none }
     stages {
         stage('test'){
-            agent { any }
+            agent any
             steps{
                 echo 'Testing..'
                 sh """
@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('build') {
-            agent { any }
+            agent any
             steps {
                 echo 'Buding..'
                 sh """
@@ -22,7 +22,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent { any }
+            agent any
             when {
                 expression {
                     /*如果测试失败，状态为UNSTABLE*/
